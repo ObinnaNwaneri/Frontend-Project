@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - name: checkout
-      uses: action/checkout@v4
+      uses: actions/checkout@v4
 
     - name: build image
       run: docker build -t obinnanwaneri/docker-frontend:lastest ./front-end-nextjs
