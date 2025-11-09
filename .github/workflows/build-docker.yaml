@@ -25,12 +25,12 @@ jobs:
       run: docker build -t obinnanwaneri/docker-frontend:$(cat sha.txt) ./
       # This builds the docker image and tags it with the commit sha saved in sha.txt
 
-    - name: Step 4 - logining into docker hub
+    - name: Step 4 - logging into docker hub
       uses: docker/login-action@v3
 
       with:
-        username: obinnanwaneri
-        password: ${{ secrets.obinnanwaneri }}
+        username: ${{ secrets.USER }}
+        password: ${{ secrets.DOCKERHUB_TOKEN}}
         # This logs into docker hub using a dockerhub username and password stored as a secret in the repo settings
 
     - name: Step 5 - pushing the image to docker hub
