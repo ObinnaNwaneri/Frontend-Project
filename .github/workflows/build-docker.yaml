@@ -34,5 +34,5 @@ jobs:
 
     - name: Step 5 - pushing the image to docker hub
       run: |
-        docker push obinnanwaneri/docker-frontend:$(cat sha.txt)
+        docker push ${{ secrets.USER }}/docker-frontend:$(cat sha.txt)
       # This pushes the docker image to docker hub using the tag saved in sha.txt
