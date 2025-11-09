@@ -17,7 +17,7 @@ jobs:
         cat sha.txt
 
     - name: build image
-      run: docker build -t obinnanwaneri/docker-frontend:${{ cat sha.txt }} ./
+      run: docker build -t obinnanwaneri/docker-frontend:cat sha.txt ./
 
     - name: login to docker hub
       uses: docker/login-action@v3
@@ -28,4 +28,4 @@ jobs:
 
     - name: push images to docker hub
       run: |
-        docker push obinnanwaneri/docker-frontend:${{ cat sha.txt }}
+        docker push obinnanwaneri/docker-frontend:cat sha.txt
